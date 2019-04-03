@@ -1,33 +1,37 @@
 package io.zipcoder.crudapp;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 public class PersonController {
+    @Autowired
+    private PersonRepository personRepository;
+
     private List<Person> personList;
 
-    @PostMapping
-    public Person createPerson(Person p){
+    @PostMapping("/people")
+    public Person createPerson(@RequestBody Person p){
         return null;
     }
 
-    @GetMapping
-    public Person getPerson(int id){
+    @GetMapping("/people/{id}")
+    public Person getPerson(@PathVariable Long id){
         return null;
     }
 
-    @GetMapping
+    @GetMapping("/people")
     public List<Person> getPersonList(){
         return null;
     }
 
-    @PutMapping
-    public Person updatePerson(Person p){
+    @PutMapping("/people")
+    public Person updatePerson(@RequestBody Person p){
         return null;
     }
 
-    @DeleteMapping
-    public void deletePerson(int id){}
+    @DeleteMapping("/people/{id}")
+    public void deletePerson(@PathVariable Long id){}
 }
