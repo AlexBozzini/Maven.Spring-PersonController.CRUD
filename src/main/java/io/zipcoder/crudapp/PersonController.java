@@ -1,6 +1,7 @@
 package io.zipcoder.crudapp;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -8,12 +9,10 @@ import java.util.List;
 @RestController
 public class PersonController {
     @Autowired
-    private PersonRepository personRepository;
-
-    private List<Person> personList;
+    public PersonController(){}
 
     @PostMapping("/people")
-    public Person createPerson(@RequestBody Person p){
+    public ResponseEntity<Person> createPerson(@RequestBody Person p){
         return null;
     }
 
