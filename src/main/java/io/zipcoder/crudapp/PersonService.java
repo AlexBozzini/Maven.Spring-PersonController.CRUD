@@ -2,6 +2,8 @@ package io.zipcoder.crudapp;
 
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class PersonService {
     private PersonRepository repository;
@@ -32,5 +34,9 @@ public class PersonService {
     public Boolean delete(Long id){
         repository.delete(id);
         return true;
+    }
+
+    public Iterable<Person> getAll(){
+        return repository.findAll();
     }
 }
